@@ -1960,6 +1960,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// 在Vercel环境中，确保正确处理根路径
+if (process.env.VERCEL) {
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+}
+
 // 启动服务器（仅在非Vercel环境）
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
   app.listen(PORT, () => {
