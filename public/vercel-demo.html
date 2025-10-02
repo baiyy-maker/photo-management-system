@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝格立印照片管理系统 - Vercel演示版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .demo-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .demo-info h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .demo-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .features {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .features h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            color: #666;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .login-form {
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .demo-accounts {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .demo-accounts h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .account-item {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .account-item strong {
+            color: #333;
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">宝格立印</div>
+        <div class="subtitle">照片管理系统 - Vercel演示版</div>
+        
+        <div class="demo-info">
+            <h3>🎉 部署成功！</h3>
+            <p>您的"宝格立印"照片管理系统已成功部署到Vercel！</p>
+            <p>这是一个演示版本，展示了系统的核心功能。</p>
+        </div>
+        
+        <div class="features">
+            <h4>✨ 系统功能</h4>
+            <ul>
+                <li>多角色用户管理（管理员、商家、客户）</li>
+                <li>安全的用户认证系统</li>
+                <li>文件上传下载管理</li>
+                <li>智能筛选和分页</li>
+                <li>操作日志记录</li>
+                <li>响应式设计（支持手机、平板、电脑）</li>
+            </ul>
+        </div>
+        
+        <div class="demo-accounts">
+            <h4>🔑 演示账户</h4>
+            <div class="account-item">
+                <strong>主管理员：</strong> admin / admin123
+            </div>
+            <div class="account-item">
+                <strong>子管理员：</strong> subadmin / sub123
+            </div>
+            <div class="account-item">
+                <strong>商家：</strong> merchant1 / merchant123
+            </div>
+            <div class="account-item">
+                <strong>客户：</strong> customer1 / customer123
+            </div>
+        </div>
+        
+        <div class="login-form">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请输入密码">
+            </div>
+            <button class="btn" onclick="login()">登录演示</button>
+        </div>
+        
+        <div id="status"></div>
+    </div>
+
+    <script>
+        async function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const statusDiv = document.getElementById('status');
+            
+            if (!username || !password) {
+                showStatus('请输入用户名和密码', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showStatus(`登录成功！欢迎 ${result.user.username} (${getRoleName(result.user.role)})`, 'success');
+                } else {
+                    showStatus(result.message, 'error');
+                }
+            } catch (error) {
+                showStatus('网络错误，请稍后重试', 'error');
+            }
+        }
+        
+        function getRoleName(role) {
+            const roles = {
+                'main_admin': '主管理员',
+                'sub_admin': '子管理员',
+                'merchant': '商家',
+                'customer': '客户'
+            };
+            return roles[role] || role;
+        }
+        
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+        
+        // 页面加载时检查API状态
+        window.onload = async function() {
+            try {
+                const response = await fetch('/api/health');
+                const result = await response.json();
+                if (result.success) {
+                    console.log('API状态正常:', result.message);
+                }
+            } catch (error) {
+                console.log('API检查失败:', error);
+            }
+        };
+    </script>
+</body>
+</html>
