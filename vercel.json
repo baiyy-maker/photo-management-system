@@ -2,6 +2,10 @@
   "version": 2,
   "routes": [
     {
+      "src": "/success",
+      "dest": "/public/success.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/$1"
     },
