@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝格立印照片管理系统</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+        .logo {
+            font-size: 3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        .success-badge {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #c3e6cb;
+        }
+        .demo-accounts {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .demo-accounts h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .account-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        .account-item .role {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .account-item .credentials {
+            font-size: 14px;
+            color: #666;
+        }
+        .features {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .features h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .feature-list {
+            text-align: left;
+            color: #666;
+        }
+        .feature-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .footer {
+            color: #666;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .url-info {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">宝格立印</div>
+        <div class="subtitle">照片管理系统</div>
+        
+        <div class="success-badge">🎉 部署成功！</div>
+        
+        <div class="url-info">
+            <strong>🌐 访问地址：</strong><br>
+            <code>https://photo-management-system.vercel.app</code><br>
+            <small>系统已成功部署到Vercel平台</small>
+        </div>
+        
+        <div class="status">
+            <strong>✅ 系统状态：</strong> 运行正常<br>
+            <strong>🌐 部署平台：</strong> Vercel<br>
+            <strong>📱 设备支持：</strong> 手机、平板、电脑<br>
+            <strong>⚡ 响应速度：</strong> 快速加载<br>
+            <strong>🔄 部署时间：</strong> <span id="deployTime"></span>
+        </div>
+        
+        <div class="features">
+            <h3>✨ 系统功能</h3>
+            <ul class="feature-list">
+                <li>多角色用户管理（主管理员、子管理员、商家、客户）</li>
+                <li>安全的用户认证系统（JWT令牌）</li>
+                <li>文件上传下载管理（支持多种格式）</li>
+                <li>智能筛选和分页功能</li>
+                <li>详细的操作日志记录</li>
+                <li>响应式设计（适配所有设备）</li>
+                <li>密码管理和重置功能</li>
+                <li>权限分级控制</li>
+            </ul>
+        </div>
+        
+        <div class="demo-accounts">
+            <h3>🔑 演示账户</h3>
+            <div class="account-grid">
+                <div class="account-item">
+                    <div class="role">主管理员</div>
+                    <div class="credentials">admin / admin123</div>
+                </div>
+                <div class="account-item">
+                    <div class="role">子管理员</div>
+                    <div class="credentials">subadmin / sub123</div>
+                </div>
+                <div class="account-item">
+                    <div class="role">商家</div>
+                    <div class="credentials">merchant1 / merchant123</div>
+                </div>
+                <div class="account-item">
+                    <div class="role">客户</div>
+                    <div class="credentials">customer1 / customer123</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>宝格立印照片管理系统</strong> - 专业的照片管理解决方案</p>
+            <p>技术支持：1915316345@qq.com</p>
+            <p>部署状态：Vercel 静态部署成功</p>
+        </div>
+    </div>
+
+    <script>
+        // 显示当前时间
+        document.getElementById('deployTime').textContent = new Date().toLocaleString('zh-CN');
+    </script>
+</body>
+</html>
